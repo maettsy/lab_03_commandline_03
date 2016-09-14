@@ -17,7 +17,9 @@ We're going to be writing a shell script.  First, though... let's figure out wha
 
 What command did you use, and what was its output?
 ----------
+date
 
+Wed Sep 14 12:25:58 EDT 2016
 
 
 ==========
@@ -25,7 +27,15 @@ What command did you use, and what was its output?
 
 What command did you use, and what was its output?
 ----------
+cal
 
+   September 2016
+Su Mo Tu We Th Fr Sa
+             1  2  3
+ 4  5  6  7  8  9 10
+11 12 13 14 15 16 17
+18 19 20 21 22 23 24
+25 26 27 28 29 30
 
 
 ==========
@@ -33,15 +43,16 @@ What command did you use, and what was its output?
 
 What commands did you use to do this?
 ----------
-
-
+cd ~
+pwd
 
 ==========
 4. Create an empty file called copy_to_backup.sh.  Verify that the file exists.
 
 What commands did you use to do this?
 ----------
-
+touch copy_to_backup.sh
+ls
 
 
 ==========
@@ -49,7 +60,9 @@ What commands did you use to do this?
 
 What command did you use to find the permissions?
 ----------
+ls -l copy_to_backup.sh
 
+-rw-r--r--  1 student  staff  0 Sep 14 12:27 copy_to_backup.sh
 
 
 ==========
@@ -57,7 +70,10 @@ What command did you use to find the permissions?
 
 What commands did you use to do this?  What was the output?
 ----------
+chmod u+x copy_to_backup.sh
+ls -l copy_to_backup.sh
 
+-rwxr--r--  1 student  staff  0 Sep 14 12:27 copy_to_backup.sh
 
 
 ==========
@@ -67,7 +83,9 @@ $ ./copy_to_backup.sh
 
 What command did you use to try to execute the file?  What happens?
 ----------
+./copy_to_backup.sh
 
+no output / nothing happens
 
 
 ==========
@@ -75,7 +93,7 @@ What command did you use to try to execute the file?  What happens?
 
 What command did you use to do this?
 ----------
-
+nano ./copy_to_backup.sh
 
 
 ==========
@@ -87,7 +105,10 @@ c. print out "I'm done backing up"
 
 Write out the code in your file below...
 ----------
-
+#!/bin/bash
+mkdir -p /Users/student/backup 
+#inprogress
+echo "I'm done backing up"
 
 
 ==========
@@ -98,7 +119,11 @@ Write out the code in your file below...
 
 What commands did you use to do this?
 ----------
-
+mkdir test
+cd test
+touch 1.txt
+touch 2.txt
+ls
 
 
 ==========
@@ -106,6 +131,7 @@ What commands did you use to do this?
 
 What commands did you use to do this?
 ----------
+cd ..
 
 
 
@@ -114,7 +140,7 @@ What commands did you use to do this?
 
 What commands did you use to do this?
 ----------
-
+./copy_to_backup.sh
 
 
 ==========
