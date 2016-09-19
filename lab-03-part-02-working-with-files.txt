@@ -36,7 +36,7 @@ $ touch foo.txt
 $ ls
 Copy and paste the output below.
 ----------
-
+foo.txt
 
 
 ==========
@@ -44,7 +44,7 @@ Copy and paste the output below.
 
 $ touch bar.txt
 ----------
-
+bar.txt	foo.txt
 
 
 ==========
@@ -52,7 +52,13 @@ $ touch bar.txt
 
 Copy and paste the output below.
 ----------
+ls -al
 
+total 0
+drwxr-xr-x  4 student  staff  136 Sep 19 14:44 .
+drwxr-xr-x  8 student  staff  272 Sep 19 14:44 ..
+-rw-r--r--  1 student  staff    0 Sep 19 14:44 bar.txt
+-rw-r--r--  1 student  staff    0 Sep 19 14:44 foo.txt
 
 
 ==========
@@ -61,7 +67,10 @@ Copy and paste the output below.
 
 Write the command that you used to copy the file.  Additionally, copy and paste the output of your file listing below.
 ----------
+cp bar.txt baz.txt
+ls
 
+bar.txt	baz.txt	foo.txt
 
 
 ==========
@@ -69,20 +78,28 @@ Write the command that you used to copy the file.  Additionally, copy and paste 
 
 Write the command that you used to remove the file.  Copy and paste the output of your file listing below.
 ----------
+rm bar.txt
+ls
+
+baz.txt	foo.txt
+
 ==========
 11. Move the file called foo.txt to qux.txt and then list the files again.
 
 
 Write the command that you used to move the file.  Copy and paste the output of your file listing below.
 ----------
+mv foo.txt qux.txt
+ls
 
+baz.txt	qux.txt
 
 
 ==========
 12. Go up one directory so that you're in ~/mtec1002-lab-03.
 [NO OUTPUT]
 ----------
-
+cd ..
 
 
 ==========
@@ -90,7 +107,10 @@ Write the command that you used to move the file.  Copy and paste the output of 
 
 Write out the command that you used and what happened.
 ----------
+rm my_files
 
+rm: my_files: is a directory
+you cannot delete because it's a folder, you need to use rm -r
 
 
 ==========
@@ -98,8 +118,10 @@ Write out the command that you used and what happened.
 
 Write out the command that you used and what happened.
 ----------
+rm my_files
 
-
+rm: my_files: is a directory
+you cannot delete because it's a folder, you need to use rm -r
 
 ==========
 15. MAKE SURE YOU'RE IN THE mtec1002-lab-03 directory!  
@@ -108,8 +130,10 @@ Force the removal of the directory and files using the -rf flag
 
 $ rm -rf my_files
 ----------
+rm -rf my_files
+ls
 
-
+books		logs		logs.tar.gz	web
 
 ==========
 16. There's a txt file version of a book located in the mtec1002-lab-03 folder.  It is in the following directory if you're in the lab folder:
@@ -120,7 +144,13 @@ Use the command called cat on the file to show its contents.
 
 Describe what happened below.
 ----------
+cat books/other/pg1232.txt
 
+Professor Michael S. Hart is the originator of the Project Gutenberg-tm
+concept of a library of electronic works that could be freely shared
+with anyone.  For thirty years, he produced and distributed Project
+Gutenberg-tm eBooks with only a loose network of volunteer support.
+            etc etc etc etc etc etc
 
 
 ==========
@@ -132,7 +162,17 @@ Use the command, head, on the file to show the contents of the beginning of the 
 
 Write the command that you used below.  Write the last line of the output below (it should be the title).
 ----------
+head books/other/pg1232.txt
 
+The Project Gutenberg EBook of The Prince, by Nicolo Machiavelli
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.org
+
+
+Title: The Prince
 
 
 ==========
@@ -144,6 +184,17 @@ Use tail on the file to show the contents of the end of the file.
 
 Write the command that you used below.  Write the last line of the output below (it should be the title).
 ----------
+tail books/other/pg1232.txt
+
+Most people start at our Web site which has the main PG search facility:
+
+     http://www.gutenberg.org
+
+This Web site includes information about Project Gutenberg-tm,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+ent-v314-003:mtec1002-lab-03 student$ 
 
 
 
@@ -156,23 +207,34 @@ Use less and more on the file to show the contents of the file.  Try pressing sp
 
 Write the command that you used below.  Describe what spacebar and q does after using either less or more.
 ----------
+less books/other/pg1232.txt
+enters into the file to read it, spacebar pags down, while q quits the file being read
 
-
+more books/other/pg1232.txt
+enters into the file to read it, spacebar pags down, while q quits the file being read
 
 ==========
 20. Describe what situations you would use the following commands for viewing files: less, more, cat, tail, head
 
 (Some characteristics that may help your description might be the length of the file, whether or not you'd like to read the whole thing... or just the beginning or end, etc.)
 ----------
-
+less is good for entering the file, and having control via spacebar/q/etc to move around & read
+less is good for entering the file, and having control via spacebar/q/etc to move around & read (less functionality)
+cat is good for seeing a lot but not entering the file
+tail is good for the final segment at the bottom for reading
+head is good for just the title and intro paragraph
 
 
 ==========
 21.  How many words are in pg1232.txt?  What command did you use to determine the word count?
 ----------
+wc -w books/other/pg1232.txt
+   52639 books/other/pg1232.txt
 
 
 
 ==========
 22.  How many lines are in pg1232.txt?  What command did you use to determine the line count?
 ----------
+wc -l books/other/pg1232.txt
+    5063 books/other/pg1232.txt
