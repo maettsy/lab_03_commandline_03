@@ -107,7 +107,7 @@ Write out the code in your file below...
 ----------
 #!/bin/bash
 mkdir -p /Users/student/backup 
-#inprogress
+cp *.txt /Users/student/backup
 echo "I'm done backing up"
 
 
@@ -148,3 +148,9 @@ What commands did you use to do this?
 
 What commands did you use to do this?  Show the output.
 ----------
+cd ~
+ls
+cd backup
+ls
+
+1.txt	2.txt
