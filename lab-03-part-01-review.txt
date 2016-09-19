@@ -15,7 +15,7 @@ This lab will review downloading and uncompressing files, and it will get us set
 
 Write the command that you used to do this below:
 ----------
-
+cd ~
 
 
 ==========
@@ -23,7 +23,9 @@ Write the command that you used to do this below:
 
 Write the command that you used to do this - as well as its output - below :
 ----------
+pwd
 
+/Users/student
 
 
 ==========
@@ -31,13 +33,28 @@ Write the command that you used to do this - as well as its output - below :
 
 Write the command(s) that you used to determine this - as well as its output - below:
 ----------
+ls
 
+Adlm				Music				mtec1002-lab-02
+Adobe				Pictures			mtec1002-lab-02.zip
+Applications			Public				mtec1002-lab-03
+Daytona temp save.maxpat	Starsky temp save		mtec1002-lab-03.tar.gz
+Daytona temp svae.maxpat	Things				mtec1003
+Desktop				__MACOSX			myprojects
+Documents			copy_to_backup.sh.		pymel.log
+Downloads			drills.py			stuff
+Library				google.html			xgen
+MPLABXProjects			isus
+Movies				maya
 
 
 ==========
 4. If there are directories or files in your home directory that have the word mtec1002 in them, list them below (otherwise skip this step):
 ----------
-
+mtec1002-lab-02
+mtec1002-lab-02.zip
+mtec1002-lab-03
+mtec1002-lab-03.tar.gz
 
 
 ==========
@@ -51,7 +68,10 @@ $ rm -rf mtec1002-labs-02
 
 (skip if these directories don't exist)
 ----------
-
+rm -rf mtec1002-lab-02
+rm -rf mtec1002-lab-02.zip
+rm -rf mtec1002-lab-03
+rm -rf mtec1002-lab-03.tar.gz
 
 
 ==========
@@ -65,7 +85,11 @@ This command should have a *flag* to specify the output file.  MAKE SURE TO NAME
 
 Write the command(s) that you used to download this file - as well as its output - below:
 ----------
+curl -o mtec1002-lab-03.tar.gz http://foureyes.github.io/mtec1002-spring2014/labs/03/mtec1002-lab-03.tar.gz
 
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  898k  100  898k    0     0   952k      0 --:--:-- --:--:-- --:--:-- 1771k
 
 
 ==========
@@ -73,7 +97,17 @@ Write the command(s) that you used to download this file - as well as its output
 
 Write the command(s) that you used to do this - as well as its output - below:
 ----------
+tar -xvf mtec1002-lab-03.tar.gz
 
+x mtec1002-lab-03/
+x mtec1002-lab-03/._.DS_Store
+x mtec1002-lab-03/.DS_Store
+x mtec1002-lab-03/books/
+x mtec1002-lab-03/logs/
+x mtec1002-lab-03/web/
+x mtec1002-lab-03/web/about.html
+x mtec1002-lab-03/web/css/
+            ~etc etc etc etc etc etc
 
 
 ==========
@@ -88,6 +122,18 @@ Otherwise...
 
 Write the command(s) that you used to do this - as well as its output - below:
 ----------
+ls
+
+Adlm				Movies				isus
+Adobe				Music				maya
+Applications			Pictures			mtec1002-lab-03
+Daytona temp save.maxpat	Public				mtec1002-lab-03.tar.gz
+Daytona temp svae.maxpat	Starsky temp save		mtec1003
+Desktop				Things				myprojects
+Documents			__MACOSX			pymel.log
+Downloads			copy_to_backup.sh.		stuff
+Library				drills.py			xgen
+MPLABXProjects			google.html
 
 
 
@@ -96,6 +142,10 @@ Write the command(s) that you used to do this - as well as its output - below:
 
 Write the command(s) that you used to determine this - as well as its output - below:
 ----------
+cd mtec1002-lab-03
+ls
+
+books	logs	web
 
 
 
@@ -104,6 +154,11 @@ Write the command(s) that you used to determine this - as well as its output - b
 
 Write the command(s) (including going home) that you used to do this below:
 ----------
+cd ~
+cd mtec1002-lab-03/books/science-fiction
+pwd
+
+/Users/student/mtec1002-lab-03/books/science-fiction
 
 
 
@@ -112,7 +167,9 @@ Write the command(s) (including going home) that you used to do this below:
 
 Write the command(s) that you used to do this - as well as its output - below:
 ----------
+ls
 
+pg84.txt	pg86.txt
 
 
 ==========
@@ -120,6 +177,11 @@ Write the command(s) that you used to do this - as well as its output - below:
 
 Write the command(s) that you used to do this below:
 ----------
+cd ~
+cd /Users/student/mtec1002-lab-03/books/science-fiction
+pwd
+
+/Users/student/mtec1002-lab-03/books/science-fiction
 
 ==========
 OPTIONAL
@@ -127,6 +189,10 @@ OPTIONAL
 
 Write the command(s) that you used to do this below:
 ----------
+cd ../..
+
+/Users/student/mtec1002-lab-03
+
 
 ==========
 OPTIONAL
@@ -134,6 +200,16 @@ OPTIONAL
 
 Write the command(s) that you used to do this below:
 ----------
+ls -al
+
+total 32
+-rw-r--r--@   1 student  staff  12292 Feb 13  2013 .DS_Store
+drwxr-xr-x    4 student  staff    136 Feb 13  2013 books
+drwxr-xr-x    6 student  staff    204 Feb 13  2013 web
+drwxr-xr-x    6 student  staff    204 Sep 19 14:19 .
+drwxr-xr-x+  54 student  staff   1836 Sep 19 14:19 ..
+drwxr-xr-x  129 student  staff   4386 Sep 19 14:19 logs
+
 
 ==========
 OPTIONAL
@@ -141,3 +217,8 @@ OPTIONAL
 
 Write the command(s) that you used to do this below:
 ----------
+tar -cvf logs.tar logs/
+gzip logs.tar
+ls
+
+books		logs		logs.tar.gz	web
